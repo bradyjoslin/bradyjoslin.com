@@ -12,7 +12,7 @@ export default {
     sourcemap: true,
     format: "iife",
     name: "app",
-    file: "../static/bundle.js"
+    file: "../static/bundle.js",
   },
   plugins: [
     svelte({
@@ -20,9 +20,9 @@ export default {
       dev: !production,
       // we'll extract any component CSS out into
       // a separate file - better for performance
-      css: css => {
+      css: (css) => {
         css.write("../static/bundle.css");
-      }
+      },
     }),
 
     // If you have external dependencies installed from
@@ -32,7 +32,7 @@ export default {
     // https://github.com/rollup/plugins/tree/master/packages/commonjs
     resolve({
       browser: true,
-      dedupe: ["svelte"]
+      dedupe: ["svelte"],
     }),
     commonjs(),
 
@@ -46,11 +46,12 @@ export default {
 
     // If we're building for production (npm run build
     // instead of npm run dev), minify
-    production && terser()
+    // HAD TO TURN THIS OFF, WAS CAUSING SVELTE TO NOT RUN IN PROD
+    // production && terser()
   ],
   watch: {
-    clearScreen: false
-  }
+    clearScreen: false,
+  },
 };
 
 function serve() {
@@ -63,9 +64,9 @@ function serve() {
 
         require("child_process").spawn("npm", ["run", "start", "--", "--dev"], {
           stdio: ["ignore", "inherit", "inherit"],
-          shell: true
+          shell: true,
         });
       }
-    }
+    },
   };
 }
