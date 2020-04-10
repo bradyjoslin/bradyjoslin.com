@@ -1,0 +1,13 @@
+name = "personal-site"
+type = "webpack"
+account_id = "d3765f1c5f3d3ed76be2701b78510d29"
+workers_dev = true
+
+[site]
+bucket = "./public"
+entry-point = "workers-site"
+
+[env.production]
+workers_dev = false
+zone_id = "0b43369dd5bc0e0b2c3c768c1b478ee4"
+route = "bradyjoslin.com/*"

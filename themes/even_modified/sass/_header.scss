@@ -1,0 +1,49 @@
+#header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+
+  .logo {
+    font-family: Monoton, "Merriweather Sans", Chancery, cursive, LiSu,
+      sans-serif;
+    font-weight: 200;
+    opacity: 0.67;
+    padding-top: 15px;
+
+    a {
+      // color: #34495e;
+      font-size: 32px;
+    }
+  }
+
+  .menu {
+    align-self: flex-start;
+    font-family: $decoration-font-family;
+
+    ul {
+      display: inline-block;
+      padding-right: 25px;
+
+      li {
+        display: inline-block;
+        margin-right: 5px;
+        @include underline-from-center;
+
+        a {
+          color: #34495e;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+@include max-screen() {
+  #header {
+    .logo,
+    .menu {
+      display: none;
+    }
+    padding: 50px 0 0;
+    text-align: center;
+  }
+}

@@ -1,0 +1,30 @@
+{% extends "index.html" %} {% block content %} {% set section =
+get_section(path="blog/_index.md") %}
+<div class="posts">
+  <article class="post">
+    <div id="svelte-portrait" data-cfg='{"image_url":"./portrait.png"}'></div>
+    <p style="text-align: center;">
+      Developer at heart who leads teams that build wonderful applications.
+    </p>
+    <div id="svelte-links" data-cfg='{"links":[]}'></div>
+  </article>
+  {% for page in paginator.pages %}
+  <article class="post">
+    {{ post_macros::title(page=page) }}
+    <div class="post__summary">
+      {{ page.summary | safe }}
+    </div>
+    <div class="read-more">
+      <a href="{{ page.permalink }}">Read more...</a>
+    </div>
+  </article>
+  {% endfor %}
+</div>
+<nav class="pagination">
+  {% if paginator.previous %}
+  <a class="previous" href="{{ paginator.previous }}">‹ Previous</a>
+  {% endif %} {% if paginator.next %}
+  <a class="next" href="{{ paginator.next }}">Next ›</a>
+  {% endif %}
+</nav>
+{% endblock content %}
