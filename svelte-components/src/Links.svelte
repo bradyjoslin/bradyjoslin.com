@@ -39,10 +39,7 @@
 
 <div class="links">
   {#each links as { name, url }}
-    <a
-      rel={Object.getOwnPropertyNames(name)}
-      href={url}
-      title={Object.getOwnPropertyNames(name)}>
+    <a href={url} aria-label={Object.getOwnPropertyNames(name)}>
       <Icon data={name} scale="2" />
     </a>
   {/each}
