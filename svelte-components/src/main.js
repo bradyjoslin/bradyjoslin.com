@@ -21,11 +21,14 @@ function generateComponent(component, target, props) {
 }
 
 containers.forEach((c) => {
-  let target = document.querySelector("#svelte-" + c["name"].toLowerCase());
-  if (target) {
-    let cfg = target.dataset.cfg ? JSON.parse(target.dataset.cfg) : {};
-    generateComponent(c, target, {
-      cfg,
+  document
+    .querySelectorAll("#svelte-" + c["name"].toLowerCase())
+    .forEach((target) => {
+      if (target) {
+        let cfg = target.dataset.cfg ? JSON.parse(target.dataset.cfg) : {};
+        generateComponent(c, target, {
+          cfg,
+        });
+      }
     });
-  }
 });
