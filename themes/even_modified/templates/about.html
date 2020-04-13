@@ -1,5 +1,8 @@
-{% extends "index.html" %} {% block content %}
+{% import "macros.html" as macros %}
+{% extends "index.html" %} 
+{% block content %}
 <div class="about">
+  {{ macros::portrait(url="../portrait.png") }}
   {{ section.content | safe }}
 </div>
 {% endblock content %}

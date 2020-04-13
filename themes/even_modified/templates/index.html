@@ -1,4 +1,4 @@
-{% import "post_macros.html" as post_macros %}
+{% import "macros.html" as macros %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,9 +39,6 @@
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
       {% endblock css %}
 
-            <!-- Svelte -->
-            <link href="{{ get_url(path="bundle.css", trailing_slash=false) }}" rel="stylesheet" />
-            <script defer src="{{ get_url(path="bundle.js", trailing_slash=false) }}"></script>
       {% block extra_head %}
       {% endblock extra_head %}
 
@@ -94,7 +91,7 @@
                         <div class="posts">
                             {% for page in paginator.pages %}
                                 <article class="post">
-                                    {{ post_macros::title(page=page) }}
+                                    {{ macros::title(page=page) }}
                                     <div class="post__summary">
                                         {{ page.summary | safe }}
                                     </div>
@@ -118,7 +115,7 @@
 
             {% block footer %}
             <div style="margin-top:2em;">
-                <div id="svelte-links" data-cfg='{"links":[]}'></div>
+                {{ macros::links() }}
             </div>
             {% endblock footer %}
         </div>

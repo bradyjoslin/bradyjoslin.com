@@ -1,0 +1,93 @@
+{% macro title(page) %}
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="{{ page.permalink }}">{{ page.title }}</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">{{ page.date | date(format="%F") }} | {{ page.word_count }} words | {{ page.reading_time }} min read time</span>
+            {% if page.category %}
+                <div class="post__category">
+                    <a href="{{ get_taxonomy_url(kind="category", name=page.category) }}">{{ page.category }}</a>
+                </div>
+            {% endif %}
+        </div>
+    </header>
+{% endmacro title %}
+
+{% macro links() %}
+<div class="links">
+  <a
+    href="https://github.com/bradyjoslin"
+    aria-label="github"
+    ><svg
+      version="1.1"
+      class="fa-icon"
+      width="27.428571428571427"
+      height="32"
+      role="presentation"
+      viewBox="0 0 1536 1792"
+      style="font-size: 2em;"
+    >
+      <path
+        key="path-0"
+        d="M768 128q209 0 385.5 103t279.5 279.5 103 385.5q0 251-146.5 451.5t-378.5 277.5q-27 5-40-7t-13-30q0-3 0.5-76.5t0.5-134.5q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-119-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-85-13.5q-45 113-8 204-79 87-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-39 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 0.5 88.5t0.5 54.5q0 18-13 30t-40 7q-232-77-378.5-277.5t-146.5-451.5q0-209 103-385.5t279.5-279.5 385.5-103zM291 1231q3-7-7-12-10-3-13 2-3 7 7 12 9 6 13-2zM322 1265q7-5-2-16-10-9-16-3-7 5 2 16 10 10 16 3zM352 1310q9-7 0-19-8-13-17-6-9 5 0 18t17 7zM394 1352q8-8-4-19-12-12-20-3-9 8 4 19 12 12 20 3zM451 1377q3-11-13-16-15-4-19 7t13 15q15 6 19-6zM514 1382q0-13-17-11-16 0-16 11 0 13 17 11 16 0 16-11zM572 1372q-2-11-18-9-16 3-14 15t18 8 14-14z"
+      ></path>
+    </svg> </a
+  ><a
+    href="https://twitter.com/bradyj"
+    aria-label="twitter"
+    ><svg
+      version="1.1"
+      class="fa-icon"
+      width="29.714285714285715"
+      height="32"
+      role="presentation"
+      viewBox="0 0 1664 1792"
+      style="font-size: 2em;"
+    >
+      <path
+        key="path-0"
+        d="M1620 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"
+      ></path>
+    </svg> </a
+  ><a
+    href="https://linkedin.com/in/bradyjoslin"
+    aria-label="linkedin"
+    ><svg
+      version="1.1"
+      class="fa-icon"
+      width="27.428571428571427"
+      height="32"
+      role="presentation"
+      viewBox="0 0 1536 1792"
+      style="font-size: 2em;"
+    >
+      <path
+        key="path-0"
+        d="M349 625v991h-330v-991h330zM370 319q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zM1536 1048v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"
+      ></path>
+    </svg> </a
+  ><a href="../rss.xml" aria-label="rss"
+    ><svg
+      version="1.1"
+      class="fa-icon"
+      width="25.142857142857142"
+      height="32"
+      role="presentation"
+      viewBox="0 0 1408 1792"
+      style="font-size: 2em;"
+    >
+      <path
+        key="path-0"
+        d="M384 1344q0 80-56 136t-136 56-136-56-56-136 56-136 136-56 136 56 56 136zM896 1467q2 28-17 48-18 21-47 21h-135q-25 0-43-16.5t-20-41.5q-22-229-184.5-391.5t-391.5-184.5q-25-2-41.5-20t-16.5-43v-135q0-29 21-47 17-17 43-17h5q160 13 306 80.5t259 181.5q114 113 181.5 259t80.5 306zM1408 1469q2 27-18 47-18 20-46 20h-143q-26 0-44.5-17.5t-19.5-42.5q-12-215-101-408.5t-231.5-336-336-231.5-408.5-102q-25-1-42.5-19.5t-17.5-43.5v-143q0-28 20-46 18-18 44-18h3q262 13 501.5 120t425.5 294q187 186 294 425.5t120 501.5z"
+      ></path>
+    </svg>
+  </a>
+</div>
+{% endmacro linlks %} 
+
+{% macro portrait(url) %}
+<div class="portrait">
+  <img src="{{ url }}" alt="Portrait" />
+</div>
+{% endmacro portrait %}

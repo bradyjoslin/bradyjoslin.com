@@ -3,8 +3,6 @@ title = "About"
 template = "about.html"
 +++
 
-{{ svelte(name="portrait",cfg='{"image_url":"../portrait.png"}') }}
-
 &nbsp;
 
 Hi, I'm Brady Joslin. A developer at heart currently exploring [Rust](https://www.rust-lang.org/), [Svelte](https://svelte.dev/), and [Cloudflare Workers](https://workers.cloudflare.com/). Also spend time studying [mental models](https://fs.blog/mental-models/) and ways to [embrace reality](https://www.youtube.com/watch?v=Tfrrubw7pcE").

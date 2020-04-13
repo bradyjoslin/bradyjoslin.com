@@ -24,6 +24,22 @@ main {
   .post {
     padding: 1.5rem 0;
 
+    .portrait {
+      img {
+        border-radius: 50%;
+        width: 100%;
+        min-width: 46px;
+        min-height: 46px;
+        max-width: 150px;
+        max-height: 150px;
+        border: 1px solid #34495e;
+        padding: 0px;
+        margin: 0px;
+      }
+
+      text-align: center;
+    }
+
     .post__title {
       font-family: $decoration-font-family;
       line-height: 1.4;
@@ -217,6 +233,21 @@ main {
   float: left;
   &:hover {
     transform: translateX(-4px);
+  }
+}
+
+.links {
+  text-align: center;
+  .fa-icon {
+    fill: currentColor;
+  }
+  a {
+    color: #34495e;
+    margin: 0.25rem;
+    text-decoration: none;
+  }
+  a:hover {
+    border-bottom: 2px solid #c05b4d;
   }
 }
 
