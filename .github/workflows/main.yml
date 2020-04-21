@@ -23,11 +23,11 @@ jobs:
       run: |
         sudo snap install --edge zola
         zola build
-#     - name: Deploy to Cloudflare Workers with Wrangler
-#       uses: cloudflare/wrangler-action@1.1.0
-#       with:
-#         # Your Cloudflare API Token
-#         apiToken: ${{ secrets.CF_API_TOKEN }}
+    - name: Deploy to Cloudflare Workers with Wrangler
+      uses: cloudflare/wrangler-action@1.1.0
+      with:
+        # Your Cloudflare API Token
+        apiToken: ${{ secrets.CF_API_TOKEN }}
         # The environment you'd like to publish your Workers project to - must be defined in wrangler.toml
         # environment: production
 
