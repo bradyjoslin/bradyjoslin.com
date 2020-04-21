@@ -22,7 +22,7 @@ jobs:
     - name: Install and Run Zola
       run: |
         sudo snap install --edge zola
-        zola build --base-url "https://personal-site.bradyjoslin.workers.dev"
+        zola build
     - name: Deploy to Cloudflare Workers with Wrangler
       uses: cloudflare/wrangler-action@1.1.0
       with:
