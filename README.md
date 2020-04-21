@@ -27,7 +27,7 @@ Site content lives in the `content` directory, which is currently configured for
 To create an optimised version of the app running on Cloudflare Workers workers.dev subdomain:
 
 ```bash
-zola build --base-url "https://personal-site.bradyjoslin.workers.dev"
+zola build --base-url "{your workers.dev domain}"
 ```
 
 Then to deploy to Cloudflare workers.dev:
