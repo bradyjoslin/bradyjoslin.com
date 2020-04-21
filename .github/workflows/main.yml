@@ -29,6 +29,6 @@ jobs:
         # Your Cloudflare API Token
         apiToken: ${{ secrets.CF_API_TOKEN }}
         # The environment you'd like to publish your Workers project to - must be defined in wrangler.toml
-        # environment: production
+        environment: production
 
 
