@@ -1,0 +1,17 @@
+personal_ws-1.1 en 0 utf-8
+Cloudflare
+config
+embeddable
+facicon
+gitignore
+html
+javascript
+Jira
+Joslin
+json
+JSON
+nbsp
+README
+shortcode
+SharePoint
+jzojlj
