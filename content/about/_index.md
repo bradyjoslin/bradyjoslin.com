@@ -11,6 +11,6 @@ For fun enjoy hitting the slopes in Colorado and cruising around on my [Onewheel
 
 Currently working as Director of Application Services at a Fortune 500 company in Houston, TX,
 leading wonderful teams who create custom web and mobile applications and build solutions on
-platforms like Sharepoint and Jira.
+platforms like SharePoint and Jira.
 
 Opinions expressed here are my own and not the views of my employer.
