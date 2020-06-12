@@ -6,7 +6,7 @@ order = 1
 insert_anchor_links = "right"
 [taxonomies]
 categories = ["Cloudflare", "Development"]
-tags = ["automation", "development"]
+tags = ["automation", "development", "cloudflare"]
 +++
 
 [Outgoing webhook bots](https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-outgoing-webhook) are an easy way to add powerful automation capabilities to MS Teams. [Cloudflare Workers](https://workers.dev/) is serverless computing platform with excellent performance and global redundancy with a fantastic developer CLI called [Wrangler](https://github.com/cloudflare/wrangler). This article describes how to use the open source [msteams-webhook-worker-template](https://github.com/bradyjoslin/msteams-webhook-worker-template) to kick-start Cloudflare Worker based outgoing webhook bots for MS Teams and walks through a sample bot that uses natural language processing to provide web page summaries.  
