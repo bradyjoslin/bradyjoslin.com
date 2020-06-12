@@ -1,5 +1,5 @@
 +++
-title = "MS Teams Outgoing Webhook Bots with Cloudflare Workers"
+title = "Create MS Teams Bots with Cloudflare Workers"
 date = 2020-06-11
 weight = 1
 order = 1
