@@ -38,6 +38,7 @@ msgHash
 nbsp
 nuget
 NuGet
+Onewheel
 persistCredentials
 Pixelbook
 ProxyCommand
