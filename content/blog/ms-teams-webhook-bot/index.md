@@ -37,7 +37,6 @@ wrangler secret put SECRET
 
 Teams sends a POST request with an HMAC signature that contains information about the message to the worker when the bot is @mentioned. The worker first verifies the webhook signature using the `SECRET` variable.
 
-
 ```javascript
 function verifySignature(body, signature) {
   let bufSecret = Buffer.from(SECRET, 'base64')
