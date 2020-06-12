@@ -80,4 +80,4 @@ steps:
 
 ## Conclusion
 
-Overall, the setup was fairly easy and I was satisfied with the results. Using the YAML pipeline definition makes this very easy to share across parojects. Special thanks for [Jean-Yves COUET](https://github.com/jycouet) for creating the open source extensions for Azure Devops.
+Overall, the setup was fairly easy and I was satisfied with the results. Using the YAML pipeline definition makes this very easy to share across projects. Special thanks for [Jean-Yves COUET](https://github.com/jycouet) for creating the open source extensions for Azure DevOps.

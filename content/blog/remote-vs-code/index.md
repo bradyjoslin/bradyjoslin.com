@@ -13,9 +13,9 @@ Microsoft recently released an exciting [set of capabilities](https://code.visua
 
 <!-- more -->
 
-Using virutal machines for development also allows experimentation with new configurations or libraries without fear of breaking your local setup or introducing security vulnerabilities. This can also be helpful those who enjoy hacking on a Raspberry Pi, providing a nice way of using your main computer with VS Code to develop your scripts on the Raspberry Pi without the need for finding a separate display or using VNC.
+Using virtual machines for development also allows experimentation with new configurations or libraries without fear of breaking your local setup or introducing security vulnerabilities. This can also be helpful those who enjoy hacking on a Raspberry Pi, providing a nice way of using your main computer with VS Code to develop your scripts on the Raspberry Pi without the need for finding a separate display or using VNC.
 
-Earlier this year I ran into a [post by Fatih Arslan](https://arslan.io/2019/01/07/using-the-ipad-pro-as-my-development-machine/), the original author of [vim-go](https://github.com/fatih/vim-go), about his experiment using an iPad Pro for development by leveraging remote virtual machines and containers hosted on DigitalOcean. His post inspired me to experiment with this type of setup using my Google Pixelbook, which I ended up using for half of 2019. However, there were a few downsides inherent in the architecture, a large one being that you are working in a code editor running on the host instead of your local machine, inevitibly leading to the feeling of lag while typing.
+Earlier this year I ran into a [post by Fatih Arslan](https://arslan.io/2019/01/07/using-the-ipad-pro-as-my-development-machine/), the original author of [vim-go](https://github.com/fatih/vim-go), about his experiment using an iPad Pro for development by leveraging remote virtual machines and containers hosted on DigitalOcean. His post inspired me to experiment with this type of setup using my Google Pixelbook, which I ended up using for half of 2019. However, there were a few downsides inherent in the architecture, a large one being that you are working in a code editor running on the host instead of your local machine, inevitably leading to the feeling of lag while typing.
 
 ## VS Code Remote SSH Extension
 
@@ -35,7 +35,7 @@ Then follow Microsoft's [getting started instructions](https://code.visualstudio
 
 Cloudflare can be used to create a zero trust configuration for the SSH connection between your local machine and the VM in Azure. To get started, create a free Cloudflare account, set up a domain, and enable the Access and Argo Tunnel products in your account. [These instructions](https://support.cloudflare.com/hc/en-us/articles/201720164-Creating-a-Cloudflare-account-and-adding-a-website) detail how to create an account and configure a domain.
 
-Cloudflare Access integrates with existing identity providers and allow you to control who can access resources associated with your domain. In this case, we'll setup a subdomain that will resolve to the the remote VM. For this example, you should be able to use the free allocation of Acess, which gives you the options of choosing Google, GitHub, FaceBook, or One-Time Pin as the identity provider.
+Cloudflare Access integrates with existing identity providers and allow you to control who can access resources associated with your domain. In this case, we'll setup a subdomain that will resolve to the the remote VM. For this example, you should be able to use the free allocation of Access, which gives you the options of choosing Google, GitHub, Facebook, or One-Time Pin as the identity provider.
 
 An instance of Cloudflare's Argo Tunnel runs on both the client and server to facilitate the secure SSH session, allowing us to block all inbound ports to the VM. The configuration leverages the ProxyCommand capability built in to SSH, so once configured, you are able to connect to the server using the native SSH commands.
 
