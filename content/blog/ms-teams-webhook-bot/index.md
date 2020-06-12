@@ -1,5 +1,5 @@
 +++
-title = "Cloudflare Worker MS Teams Outgoing Webhook Bots"
+title = "MS Teams Outgoing Webhook Bots with Cloudflare Workers"
 date = 2020-06-11
 weight = 1
 order = 1
@@ -9,14 +9,14 @@ categories = ["Cloudflare", "Development"]
 tags = ["automation", "development"]
 +++
 
-[Outgoing webhook bots](https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-outgoing-webhook) provide a threaded reply when @mentioned in a message and are an easy way to add powerful automation capabilities to MS Teams.
+[Outgoing webhook bots](https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-outgoing-webhook) are an easy way to add powerful automation capabilities to MS Teams. [Cloudflare Workers](https://workers.dev/) is serverless computing platform with excellent performance and global redundancy with a fantastic developer CLI called [Wrangler](https://github.com/cloudflare/wrangler). This article describes how to use a [wrangler template](https://github.com/bradyjoslin/msteams-webhook-worker-template) built for kick-starting Cloudflare Worker-based outgoing webhook bots for MS Teams.  
 
-[Cloudflare Workers](https://workers.dev/) is serverless computing platform with excellent performance and globally redundancy with a fantastic developer CLI called [Wrangler](https://github.com/cloudflare/wrangler) for deploying and configuring your workers.
+<!-- more -->
 
-[bradyjoslin/msteams-webhook-worker-template](https://github.com/bradyjoslin/msteams-webhook-worker-template) is a [wrangler template](https://github.com/cloudflare/wrangler) that helps kick start Cloudflare Worker-based outgoing webhook bots for MS Teams.  To use the template to create a new bot project simply run:
+To use the template to create a new bot project simply run:
 
 ```bash
-wrangler generate <projectname> https://github.com/bradyjoslin/msteams-webhook-worker-template
+wrangler generate <project> https://github.com/bradyjoslin/msteams-webhook-worker-template
 ```
 
 ### tldr - A Sample Bot
@@ -35,7 +35,7 @@ When creating an outgoing webhook in MS Teams [(docs)](https://docs.microsoft.co
 wrangler secret put SECRET
 ```
 
-Teams sends a POST request with an HMAC signature that contains information about the message to the worker when the bot is @mentioned. The worker first verifies the webhook signature using the `SECRET` variable.
+Teams sends an HMAC signed POST request that contains information about the message to the worker when the bot is @mentioned. The worker first verifies the webhook signature using the `SECRET` variable.
 
 ```javascript
 function verifySignature(body, signature) {
@@ -99,7 +99,7 @@ return new Response(`{"type": "message","text": "${summary}"}`, {
 })
 ```
 
-Deployment is automated through the [Wrangler GitHub Action](https://github.com/cloudflare/wrangler-action), but would be done locally using:
+Deployment is automated through the [Wrangler GitHub Action](https://github.com/cloudflare/wrangler-action), but could also be done locally using:
 
 ```bash
 wrangler publish
