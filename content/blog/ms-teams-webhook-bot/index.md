@@ -21,7 +21,7 @@ wrangler generate <project> https://github.com/bradyjoslin/msteams-webhook-worke
 
 ### tldr - A Sample Bot
 
-[tldr (“Too Long; Didn't Read”)](https://github.com/bradyjoslin/msteams-tldr/) is a sample open source bot built using the wrangler template.  When @mentioned in a post or comment in a message containing a URL the bot replies with a 3-sentence summary of the web page.
+[tldr (“Too Long; Didn't Read”)](https://github.com/bradyjoslin/msteams-tldr/) is a sample open source bot built using the wrangler template.  When @mentioned in a post or comment containing a URL the bot replies with a 3-sentence summary of the web page.
 
 ![tldr conversation](tldr.png)
 
@@ -71,7 +71,7 @@ The worker summary function makes an API call to [nlp/SummarizeURL](https://algo
 wrangler secret put ALGO_KEY
 ```
 
-Cloudflare workers makes outbound HTTP call to Algorithmia using the standard [Fetch API](https://developers.cloudflare.com/workers/reference/apis/fetch/).
+Cloudflare workers makes an outbound HTTP call to Algorithmia using the standard [Fetch API](https://developers.cloudflare.com/workers/reference/apis/fetch/).
 
 ```javascript
 async function getSummary(url) {
