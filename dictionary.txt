@@ -86,3 +86,11 @@ Devcontainers
 entrypoint
 devcontainers
 runtimes
+PocAcr
+BuildandPublishContainer
+buildAndPush
+BuildNumber
+dependsOn
+filePath
+containerRegistry
+RunInContainer
