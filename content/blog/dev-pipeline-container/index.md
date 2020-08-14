@@ -13,7 +13,7 @@ An example for how to share a single Dockerfile defined in a repository for both
 
 <!-- more -->
 
-> **Note:** The source code for the sample project mentioned in this article can be found [here](https://github.com/bradyjoslin/container-dev-pipeline-sample). while the sample code for this project is in GitHub, this example would work the same were the repository located in an Azure DevOps Repo.  If you'd like to configure a similar setup using GitHub Actions instead of Azure Pipelines see this [post](../dev-action-container).
+> **Note:** The source code for the sample project mentioned in this article can be found [here](https://github.com/bradyjoslin/container-dev-pipeline-sample). While the sample code for this project is in GitHub, this example would work the same were the repository located in an Azure DevOps Repo.  If you'd like to configure a similar setup using GitHub Actions instead of Azure Pipelines see this [post](../dev-action-container).
 
 
 ## VS Code Devcontainers
