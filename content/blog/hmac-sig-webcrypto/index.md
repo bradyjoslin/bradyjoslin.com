@@ -176,6 +176,7 @@ async function signResponse(message, secret) {
     new TextEncoder().encode(message)
   );
 
+  // Convert ArrayBuffer to Base64
   return btoa(String.fromCharCode(...new Uint8Array(signature)));
 }
 
