@@ -6,7 +6,7 @@ order = 1
 insert_anchor_links = "right"
 [taxonomies]
 categories = ["Development", "Crypto", "Cloudflare"]
-tags = ["devops", "development", "cryptography", "cloudflare"]
+tags = ["development", "cryptography", "cloudflare"]
 +++
 
 How to sign and verify HMAC signatures using Web Crypto - an API available in modern browsers and Cloudflare Workers.
