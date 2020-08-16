@@ -83,8 +83,7 @@ async function signResponse(message, secret) {
     new TextEncoder().encode(message)
   );
 
-  return btoa(String.fromCharCode(...new Uint8Array(signature)))
-}
+  return btoa(String.fromCharCode(...new Uint8Array(signature)));
 }
 ```
 
