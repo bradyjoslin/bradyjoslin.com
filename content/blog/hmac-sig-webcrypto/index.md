@@ -72,7 +72,7 @@ A function called `signResponse` will be used for deriving signatures. Our funct
 const signature = crypto.subtle.sign(algorithm, key, data);
 ```
 
-We'll use the previously defined `importKey` function to derive the key and since the `message` a string and the data needs to be an `ArrayBuffer`, we'll once again use a `TextEncoder` to convert the type.
+We'll use the previously defined `importKey` function to derive the key. Since the `message` is a string and the input data needs to be an `ArrayBuffer`, we'll once again use a `TextEncoder` to convert the type.
 
 ```ts
 async function signResponse(message, secret) {
