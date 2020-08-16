@@ -1,5 +1,5 @@
 +++
-title = "Signing and Verifying HMAC Signatures using Web Crypto with Cloudflare Workers"
+title = "Exploring HMAC Signatures with Web Crypto on Cloudflare Workers"
 date = 2020-08-16
 weight = 1
 order = 1
@@ -9,7 +9,7 @@ categories = ["Development", "Crypto", "Cloudflare"]
 tags = ["development", "cryptography", "cloudflare"]
 +++
 
-How to sign and verify HMAC signatures using Web Crypto - an API available in modern browsers and Cloudflare Workers.
+Web Crypto is a cryptography API available in modern browsers and Cloudflare Workers that can be used to sign messages and verify message signatures using Hashed-Based Message Authentication Codes (HMAC).  This post provides an example implementation of signing and verifying using Cloudflare Workers.
 
 <!-- more -->
 
