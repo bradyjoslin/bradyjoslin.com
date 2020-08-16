@@ -9,7 +9,7 @@ categories = ["Development", "Crypto", "Cloudflare"]
 tags = ["devops", "development", "cryptography", "cloudflare"]
 +++
 
-How to verify an HMAC signature using Web Crypto - an API available in modern browsers and Cloudflare Workers.
+How to sign and verify HMAC signatures using Web Crypto - an API available in modern browsers and Cloudflare Workers.
 
 <!-- more -->
 
