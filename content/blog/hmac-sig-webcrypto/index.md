@@ -57,12 +57,12 @@ Based on this criteria, here is our `importKey` function:
 ```ts
 async function importKey(secret) {
   return await crypto.subtle.importKey(
-    "raw",
+    'raw',
     new TextEncoder().encode(secret),
-    { name: "HMAC", hash: "SHA-256" },
+    { name: 'HMAC', hash: 'SHA-256' },
     false,
-    ["sign", "verify"]
-  );
+    ['sign', 'verify'],
+  )
 }
 ```
 
@@ -76,14 +76,15 @@ We'll use the previously defined `importKey` function to derive the key. Since t
 
 ```ts
 async function signResponse(message, secret) {
-  const key = await importKey(secret);
+  const key = await importKey(secret)
   const signature = await crypto.subtle.sign(
-    "HMAC",
+    'HMAC',
     key,
-    new TextEncoder().encode(message)
-  );
+    new TextEncoder().encode(message),
+  )
 
-  return btoa(String.fromCharCode(...new Uint8Array(signature)));
+  // Convert ArrayBuffer to Base64
+  return btoa(String.fromCharCode(...new Uint8Array(signature)))
 }
 ```
 
@@ -97,23 +98,23 @@ The `verifySignature` will take in a `message` as `string`, `signature` as a bas
 
 ```ts
 async function verifySignature(message, signature, secret) {
-  const key = await importKey(secret);
+  const key = await importKey(secret)
 
   // Convert Base64 to Uint8Array
-  const sigBuf = Uint8Array.from(atob(signature), (c) => c.charCodeAt(0));
+  const sigBuf = Uint8Array.from(atob(signature), c => c.charCodeAt(0))
 
   return await crypto.subtle.verify(
-    "HMAC",
+    'HMAC',
     key,
     sigBuf,
-    new TextEncoder().encode(message)
-  );
+    new TextEncoder().encode(message),
+  )
 }
 ```
 
 ### Run Example in the Workers Playground
 
-> [Click here](https://cloudflareworkers.com/#a2c9fe9b1cdff611bdecfa9142c0c1ce:https://tutorial.cloudflareworkers.com/?msg=Hello%20worker!) to preview a fully functioning version of this sample in the [Workers Playground](https://developers.cloudflare.com/workers/tooling/playground/).
+> [Click here](https://cloudflareworkers.com/#4d0c04c246f63b9dbdde052dd0ee553f:https://tutorial.cloudflareworkers.com/?msg=Hello%20worker!) to preview a fully functioning version of this sample in the [Workers Playground](https://developers.cloudflare.com/workers/tooling/playground/).
 
 After opening the preview of this project, switch to the `Testing` tab on the right to run the sample. To test signing, submit a `GET` request with a query string `msg` set to any text value, for example `Hello worker!`. You'll get a response with an HTTP header containing the signature for that message.
 
@@ -130,67 +131,67 @@ Play around with different messages and signatures to check that the Worker is p
 ### Full Source Code
 
 ```ts
-const SECRET = "SECRET_KEY";
+const SECRET = 'SECRET_KEY'
 
-addEventListener("fetch", (event) => {
-  event.respondWith(handleRequest(event.request));
-});
+addEventListener('fetch', event => {
+  event.respondWith(handleRequest(event.request))
+})
 
 async function handleRequest(request) {
-  if (request.method === "GET") {
-    const url = new URL(request.url);
-    const msg = url.searchParams.get("msg") || "";
-    const signature = await signResponse(msg, SECRET);
-    let response = new Response(msg);
-    response.headers.set("signature", signature);
+  if (request.method === 'GET') {
+    const url = new URL(request.url)
+    const msg = url.searchParams.get('msg') || ''
+    const signature = await signResponse(msg, SECRET)
+    let response = new Response(msg)
+    response.headers.set('signature', signature)
 
-    return response;
-  } else if (request.method === "POST") {
-    const message = await request.text();
-    const signature = request.headers.get("signature") || "";
-    const isSigValid = await verifySignature(message, signature, SECRET);
+    return response
+  } else if (request.method === 'POST') {
+    const message = await request.text()
+    const signature = request.headers.get('signature') || ''
+    const isSigValid = await verifySignature(message, signature, SECRET)
 
     return isSigValid
-      ? new Response("Valid signature!")
-      : new Response("Invalid signature!", { status: 400 });
+      ? new Response('Valid signature!')
+      : new Response('Invalid signature!', { status: 400 })
   } else {
-    return new Response("Method not supported");
+    return new Response('Method not supported')
   }
 }
 
 async function importKey(secret) {
   return await crypto.subtle.importKey(
-    "raw",
+    'raw',
     new TextEncoder().encode(secret),
-    { name: "HMAC", hash: "SHA-256" },
+    { name: 'HMAC', hash: 'SHA-256' },
     false,
-    ["sign", "verify"]
-  );
+    ['sign', 'verify'],
+  )
 }
 
 async function signResponse(message, secret) {
-  const key = await importKey(secret);
+  const key = await importKey(secret)
   const signature = await crypto.subtle.sign(
-    "HMAC",
+    'HMAC',
     key,
-    new TextEncoder().encode(message)
-  );
+    new TextEncoder().encode(message),
+  )
 
   // Convert ArrayBuffer to Base64
-  return btoa(String.fromCharCode(...new Uint8Array(signature)));
+  return btoa(String.fromCharCode(...new Uint8Array(signature)))
 }
 
 async function verifySignature(message, signature, secret) {
-  const key = await importKey(secret);
+  const key = await importKey(secret)
 
   // Convert Base64 to Uint8Array
-  const sigBuf = Uint8Array.from(atob(signature), (c) => c.charCodeAt(0));
+  const sigBuf = Uint8Array.from(atob(signature), c => c.charCodeAt(0))
 
   return await crypto.subtle.verify(
-    "HMAC",
+    'HMAC',
     key,
     sigBuf,
-    new TextEncoder().encode(message)
-  );
+    new TextEncoder().encode(message),
+  )
 }
 ```
