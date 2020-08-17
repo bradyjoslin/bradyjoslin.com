@@ -1,5 +1,5 @@
 +++
-title = "Exploring HMAC Signatures with Web Crypto on Cloudflare Workers"
+title = "Sign and Verify Messages with HMAC Using the Web Crypto API"
 date = 2020-08-16
 weight = 1
 order = 1
