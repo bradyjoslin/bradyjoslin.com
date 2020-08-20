@@ -1,13 +1,13 @@
 {% macro title(page) %}
     <header class="post__header">
         <h1 class="post__title">
-            <a href="{{ page.permalink }}">{{ page.title }}</a>
+            <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
         </h1>
         <div class="post__meta">
             <span class="post__time">{{ page.date | date(format="%F") }} | {{ page.word_count }} words | {{ page.reading_time }} min read time</span>
             {% if page.category %}
                 <div class="post__category">
-                    <a href="{{ get_taxonomy_url(kind="category", name=page.category) }}">{{ page.category }}</a>
+                    <a href="{{ get_taxonomy_url(kind="category", name=page.category) | safe }}">{{ page.category }}</a>
                 </div>
             {% endif %}
         </div>
