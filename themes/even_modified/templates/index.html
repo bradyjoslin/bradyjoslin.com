@@ -30,7 +30,7 @@
       {% endblock js %}
 
       {% block css %}
-          <link rel="stylesheet" href="{{ get_url(path="site.css", trailing_slash=false) }}">
+          <link rel="stylesheet" href="{{ get_url(path="site.css", trailing_slash=false) | safe }}">
           {% if config.extra.katex_enable %}
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
           {% endif %}
@@ -62,7 +62,7 @@
               <ul class="mobile-menu-list">
                 {% for item in config.extra.even_menu %}
                     <li class="mobile-menu-item">
-                        <a href="{{ item.url | replace(from="$BASE_URL", to=config.base_url) }}">
+                        <a href="{{ item.url | replace(from="$BASE_URL", to=config.base_url) | safe }}">
                             {{ item.name }}
                         </a>
                     </li>
@@ -76,7 +76,7 @@
                     <ul>
                         {% for item in config.extra.even_menu %}
                             <li>
-                                <a href="{{ item.url | replace(from="$BASE_URL", to=config.base_url) }}">
+                                <a href="{{ item.url | replace(from="$BASE_URL", to=config.base_url) | safe }}">
                                     {{ item.name }}
                                 </a>
                             </li>
@@ -96,7 +96,7 @@
                                         {{ page.summary | safe }}
                                     </div>
                                     <div class="read-more">
-                                        <a href="{{ page.permalink }}">Read more...</a>
+                                        <a href="{{ page.permalink | safe}}">Read more...</a>
                                     </div>
                                 </article>
                             {% endfor %}
@@ -121,7 +121,7 @@
         </div>
 
       {% block js_body %}
-          <script type="text/javascript" src="{{ get_url(path="even.js", trailing_slash=false) }}" ></script>
+          <script type="text/javascript" src="{{ get_url(path="even.js", trailing_slash=false) | safe }}" ></script>
       {% endblock js_body %}
     </body>
 
