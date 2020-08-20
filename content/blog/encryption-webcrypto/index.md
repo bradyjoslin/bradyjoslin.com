@@ -1,6 +1,6 @@
 +++
 title = "Password Encrypting Data with Web Crypto"
-date = 2020-08-18
+date = 2020-08-19
 weight = 1
 order = 1
 insert_anchor_links = "right"
