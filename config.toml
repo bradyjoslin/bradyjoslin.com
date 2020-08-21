@@ -11,20 +11,22 @@ highlight_theme = "inspired-github"
 
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
-generate_rss = true
+feed_filename = "rss.xml"
+generate_feed = true
+
 theme = "even_modified"
 
 taxonomies = [
-    # You can enable/disable RSS
-    {name = "categories", rss = false},
-    {name = "tags", rss = false},
+  # You can enable/disable RSS
+  {name = "categories", rss = true},
+  {name = "tags", rss = true},
 ]
 
 [extra]
 # Put all your custom variables here
-even_title = "Brady Joslin"
 even_menu = [
-    {url = "$BASE_URL", name = "Home"},
-    {url = "$BASE_URL/tags", name = "Tags"},
-    {url = "$BASE_URL/about", name = "About"}
+  {url = "$BASE_URL", name = "Home"},
+  {url = "$BASE_URL/tags", name = "Tags"},
+  {url = "$BASE_URL/about", name = "About"},
 ]
+even_title = "Brady Joslin"
