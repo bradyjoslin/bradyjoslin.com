@@ -48,4 +48,4 @@ wrangler publish --env production
 
 ## Deploy with GitHub Action
 
-Push to the master branch of this repo which will trigger a Github Action to publish using [Wrangler Action](https://github.com/cloudflare/wrangler-action).
+Push to the master branch of this repo which will trigger a Github Action that publishes the site using [Wrangler Action](https://github.com/cloudflare/wrangler-action).
