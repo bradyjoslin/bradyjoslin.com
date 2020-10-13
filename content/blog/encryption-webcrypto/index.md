@@ -103,10 +103,7 @@ Screenshot:
         );
         buff.set(salt, 0);
         buff.set(iv, salt.byteLength);
-        buff.set(
-          new Uint8Array(encryptedContentArr),
-          salt.byteLength + iv.byteLength
-        );
+        buff.set(encryptedContentArr, salt.byteLength + iv.byteLength);
         const base64Buff = buff_to_base64(buff);
         return base64Buff;
       } catch (e) {
